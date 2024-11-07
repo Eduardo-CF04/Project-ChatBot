@@ -4,15 +4,14 @@ import openai
 # Create your views here.
 
 def home(request):
-    # Secret Key
-    # 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
+  
 
     #PROCESAR EL FORMULARIO
     if request.method == "POST":
         vpregunta = request.POST['pregunta']
 
         # TRABAJO CON OPENAI
-        openai.api_key = "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"
+        openai.api_key = "..."
 
         #crear una instancia de openai
         openai.Model.list()
