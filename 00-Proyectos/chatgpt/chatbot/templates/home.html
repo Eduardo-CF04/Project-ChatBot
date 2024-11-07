@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if dpregunta %}
+
+<br/><strong>Pregunta:</strong> {{dpregunta}} <br/>
+
+{% endif %}
+
+<br/>
+<div class="card">
+    <div class="card-header">
+      Respuesta. CHAT OpenAI
+    </div>
+    <div class="card-body">
+        
+        <!-- Esto es un test!!! <br/> -->
+        {% if dresponse %}
+            {{dresponse}}
+        {% endif %} 
+
+    </div>
+</div>
+
+<br/><br/>
+
+<form method="POST" action="{% url 'home' %}">
+    {% csrf_token %}
+    
+    <div class="mb-3">
+      
+      <input type="text" class="form-control" placeholder="Preguntale a CHAT OpenAI" name="pregunta">
+      
+    </div>
+
+    <button type="submit" class="btn btn-secondary">Enviar pregunta</button>
+
+</form>
+
+{% endblock %}
